@@ -21,9 +21,12 @@ $(NAME) : $(OBJ) $(INCLUDE)
 	$(CC) $(FLAGS) -c -o $@ $<
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
+	@echo "Objects deleted"
 
-fclean: clean
-	rm -f $(NAME)
+fclean: 
+	@rm -f $(OBJ)
+	@rm -f $(NAME)
+	@echo "$(NAME) and objects deleted"
 
 re: fclean all
